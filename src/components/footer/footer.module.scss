@@ -1,0 +1,25 @@
+.Footer {
+  background: #202020;
+  padding: 20px 0;
+  flex: 0 0 auto;
+  color: #fff;
+  margin: 0;
+}
+
+.Footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.Footer a:hover {
+  color: #7096ff;
+}
+
+.FooterCardsFallback {
+  & {
+    text-align: center;
+  }
+  &::after {
+    content: '...';
+  }
+}

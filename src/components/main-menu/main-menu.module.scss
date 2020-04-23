@@ -1,0 +1,173 @@
+@import '../../config/variables.scss';
+
+$button-pudding: 20px;
+$button-height: $font-size-px * $line-height + 2 * $button-pudding;
+
+$screen-size-menu-focus-or-hover: $screen-size-sm;
+
+$main-menu-z-index: 2; // swiper has z-index 1, so we increase z-index here in order to show menu above swiper
+
+.OurLocations {
+  & {
+    color: $main-menu-item-color-normal;
+    height: $button-height;
+    margin-right: -10px;
+    outline: none;
+  }
+
+  @media (min-width: $screen-size-menu-focus-or-hover) {
+    z-index: $main-menu-z-index;
+    position: relative;
+    margin-right: 0;
+  }
+
+  // &:focus,
+  // &:focus-within,
+  &:hover {
+    background: $main-menu-item-bg-active;
+    color: $main-menu-item-color-active;
+  }
+}
+
+.OurLocationsButton {
+  padding: $button-pudding;
+  text-align: center;
+  display: block;
+  outline: none;
+}
+
+.CountriesList {
+  box-shadow: 0 0 10px 0 rgba(32, 32, 32, 0.2);
+  transition: all 0.2s ease 0s;
+  z-index: $main-menu-z-index;
+  background-color: #fff;
+  top: $button-height;
+  position: absolute;
+  overflow: hidden;
+  list-style: none;
+  display: block;
+  padding: 0;
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  right: 0;
+  left: 0;
+
+  @media (min-width: $screen-size-menu-focus-or-hover) {
+    transform: translate(-50%, 0);
+    position: relative;
+    right: auto;
+    left: 50%;
+    top: 0;
+  }
+}
+
+.CountriesList {
+  @mixin country-list-visible {
+    font-size: inherit;
+    overflow: visible;
+    padding: 20px 0px;
+    display: block;
+    height: auto;
+    opacity: 1;
+  }
+
+  @media (max-width: #{$screen-size-menu-focus-or-hover - 1px}) {
+    .OurLocations:focus &,
+    .OurLocations:focus-within & {
+      @include country-list-visible;
+    }
+  }
+
+  @media (min-width: $screen-size-menu-focus-or-hover) {
+    &:hover,
+    .OurLocations:hover & {
+      @include country-list-visible;
+    }
+  }
+}
+
+.CountryItem {
+  & {
+    color: $main-menu-item-color-normal;
+    position: relative;
+    display: block;
+  }
+
+  &:hover {
+    background: $main-menu-item-bg-hover;
+    color: $main-menu-item-color-hover;
+  }
+}
+
+.CountryName {
+  white-space: nowrap;
+  padding: 10px 25px;
+  cursor: pointer;
+  display: block;
+  color: inherit;
+}
+
+.LocationsList {
+  & {
+    background: #fff;
+    display: none;
+    padding: 0;
+  }
+
+  @media (min-width: $screen-size-menu-focus-or-hover) {
+    box-shadow: 0 0 10px 0 rgba(32, 32, 32, 0.2);
+    position: absolute;
+    padding: 20px 0;
+    right: 100%;
+    top: -20px;
+  }
+}
+
+.CountryItem {
+  outline: none;
+}
+
+.LocationsList {
+  @media (max-width: #{$screen-size-menu-focus-or-hover - 1px}) {
+    .CountryItem:focus &,
+    .CountryItem:focus-within & {
+      display: block;
+    }
+  }
+  @media (min-width: $screen-size-menu-focus-or-hover) {
+    .CountryItem:hover & {
+      display: block;
+    }
+  }
+}
+
+.LocationItem {
+  display: block;
+}
+
+.LocationName {
+  & {
+    color: $main-menu-item-color-normal;
+    padding: 10px 20px 10px 60px;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    display: block;
+  }
+
+  @media (min-width: $screen-size-menu-focus-or-hover) {
+    padding: 10px 20px;
+  }
+
+  &:hover {
+    background: $main-menu-item-bg-hover;
+    color: $main-menu-item-color-hover;
+  }
+}
+
+.LocationNameCurrent,
+.LocationNameCurrent:hover {
+  background: $main-menu-item-bg-active;
+  color: $main-menu-item-color-active;
+}

@@ -1,0 +1,24 @@
+.FlexRow {
+  justify-content: space-between;
+  align-items: baseline;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  display: flex;
+}
+
+.FlexRowMiddle {
+  align-items: center;
+}
+
+.FlexCell {
+  flex: 0 1 auto;
+}
+
+.FlexCellGrow {
+  flex-grow: 1;
+}
+
+.FlexCellEqual {
+  flex-basis: 0;
+}

@@ -1,0 +1,9 @@
+@import '../../config/variables.scss';
+
+.Container {
+  max-width: $container-max-width + 2 * $container-padding-horizontal;
+  padding-right: $container-padding-horizontal;
+  padding-left: $container-padding-horizontal;
+  margin-right: auto;
+  margin-left: auto;
+}

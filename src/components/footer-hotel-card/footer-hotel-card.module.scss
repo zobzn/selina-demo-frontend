@@ -1,0 +1,62 @@
+@import '../../config/variables.scss';
+
+.Cards {
+  margin: 30px 0;
+
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  display: flex;
+
+  @media (min-width: $screen-size-sm) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+
+.Card {
+  flex: 1 1 0;
+  padding: 10px 0;
+
+  @media (min-width: $screen-size-sm) {
+    padding: 5px;
+  }
+
+  @media (min-width: $screen-size-md) {
+    padding: 10px;
+  }
+
+  @media (min-width: $screen-size-lg) {
+    padding: 15px;
+  }
+}
+
+.CardLink {
+  & {
+    box-shadow: 0 0 10px 0 rgba(#cccccc, 0.1);
+    text-align: center;
+    display: block;
+    padding: 10px;
+  }
+  &:hover {
+    box-shadow: 0 0 15px 0 rgba(#cccccc, 0.3);
+  }
+}
+
+.CardHead {
+  padding: 65% 0 0 0;
+  position: relative;
+}
+
+.CardImage {
+  object-fit: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.CardTitle {
+  margin: 10px 0 0 0;
+}

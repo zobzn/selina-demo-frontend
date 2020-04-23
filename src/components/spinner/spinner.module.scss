@@ -1,0 +1,11 @@
+.Spinner {
+  /* background: rgba(0, 0, 0, 0.5); */
+  background: #fff url('./spinner-cccccc.svg') no-repeat 50% 50%;
+  overscroll-behavior: contain;
+  position: fixed;
+  z-index: 99999;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
