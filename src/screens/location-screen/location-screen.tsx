@@ -9,6 +9,7 @@ import { markdownToHtml } from '../../lib/markdown-to-html';
 import Spinner from '../../components/spinner/spinner';
 import { generateSelinaSrcSet } from '../../lib/selina-images-srcset';
 import { Helmet } from 'react-helmet';
+import { Redirect } from 'react-router';
 
 const transparentGif = `data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==`;
 
@@ -34,7 +35,11 @@ const swiperParams = {
 };
 
 export const LocationScreen = () => {
-  const { location } = useCurrentSelinaLocation();
+  const { slug, location } = useCurrentSelinaLocation();
+
+  if (slug && !location) {
+    return <Redirect to={'/'} />;
+  }
 
   if (!location) {
     return (

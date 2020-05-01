@@ -1,10 +1,5 @@
 import React, { Suspense } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import ScrollToTop from '../scroll-to-top/scroll-to-top';
 import Spinner from '../spinner/spinner';
 
@@ -24,7 +19,7 @@ const LocationScreen = React.lazy(() =>
 
 function App() {
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <Suspense fallback={<Spinner />}>
         <Switch>
@@ -37,7 +32,7 @@ function App() {
           <Route path="*" render={() => <Redirect to={`/`} />} />
         </Switch>
       </Suspense>
-    </Router>
+    </>
   );
 }
 

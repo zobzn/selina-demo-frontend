@@ -1,7 +1,8 @@
-import './index.scss';
 import React from 'react';
 import { hydrate, render } from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import App from './components/app/app';
+import './index.scss';
 import * as serviceWorker from './serviceWorker';
 
 const rootElement = document.getElementById('root');
@@ -13,7 +14,11 @@ if (rootElement) {
   //   </React.StrictMode>
   // );
 
-  const rootJsx = <App />;
+  const rootJsx = (
+    <Router>
+      <App />
+    </Router>
+  );
 
   if (rootElement.querySelector('img[alt="Loading..."]')) {
     render(rootJsx, rootElement);

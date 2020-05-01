@@ -6,7 +6,7 @@
     "format": "prettier --write .",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject",
     "postbuild": "react-snap",
     "resize-images": "node src/scripts/resize-images.js"
@@ -20,33 +20,43 @@
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "rehype-stringify": "^7.0.0",
-    "remark-parse": "^8.0.1",
+    "remark-parse": "^8.0.2",
     "remark-rehype": "^6.0.0",
-    "swiper": "^5.3.7",
+    "swiper": "^5.3.8",
     "swr": "^0.2.0",
     "unified": "^9.0.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.5.0",
-    "@testing-library/react": "^10.0.3",
-    "@testing-library/user-event": "^10.0.2",
+    "@testing-library/react": "^10.0.4",
+    "@testing-library/user-event": "^10.1.0",
     "@types/classnames": "^2.2.10",
+    "@types/enzyme": "^3.10.5",
     "@types/jest": "^25.2.1",
-    "@types/node": "^13.13.2",
+    "@types/node": "^13.13.4",
     "@types/react": "^16.9.34",
-    "@types/react-dom": "^16.9.6",
+    "@types/react-dom": "^16.9.7",
     "@types/react-helmet": "^5.0.15",
-    "@types/react-router-dom": "^5.1.4",
+    "@types/react-router-dom": "^5.1.5",
     "@types/sharp": "^0.24.0",
-    "prettier": "^2.0.4",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "prettier": "^2.0.5",
     "react-scripts": "^3.4.1",
     "react-snap": "^1.23.0",
-    "sass": "^1.26.3",
+    "sass": "^1.26.5",
     "sharp": "^0.25.2",
     "typescript": "^3.8.3"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "browserslist": {
     "production": [

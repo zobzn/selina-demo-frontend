@@ -26,7 +26,7 @@ export const HomeScreen = () => {
         style={{
           background: `transparent url('${homeImageSrcSet[0].src}') 50% 50%/cover no-repeat`,
         }}
-        alt=""
+        alt="Hero Image"
       />
     </Layout>
   );
