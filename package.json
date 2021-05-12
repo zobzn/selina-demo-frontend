@@ -22,7 +22,7 @@
     "rehype-stringify": "^7.0.0",
     "remark-parse": "^8.0.2",
     "remark-rehype": "^6.0.0",
-    "swiper": "^5.3.8",
+    "swiper": "^6.5.1",
     "swr": "^0.2.0",
     "unified": "^9.0.0"
   },
